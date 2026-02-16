@@ -21,4 +21,15 @@ class HomeController extends Controller
         return view('home.about')->with('viewData' , $viewData); 
     }
 
+    public function contact(): View
+    {
+        $viewData = [];
+        $viewData['title'] = 'Contact - Online Store';
+        $viewData["subtitle"] = "Contact";
+        $viewData["name"] = "Alejandro Tirado";
+        $viewData["email"] = "alejitotiradito@laravel.edu.co";
+        $viewData["phone"] = "32034985796";
+        return view('home.contact')->with('viewData' , $viewData);
+    }
+
 }
