@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductCollection;
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+
 class ProductApiControllerV3 extends Controller
 {
     public function index(): JsonResponse

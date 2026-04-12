@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laravel - API test example</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <h2>Create product</h2>
+        <input type="text" id="name" placeholder="Name of the product"> 
+        <input type="number" id="price" placeholder="Price"> 
+        <button id="btnCreate">Create</button>
+
+        <div id="result"></div>
+
+        <script>
+            $('#btnCreate').click(function() {
+                $.ajax({
+                    type: "POST",
+                    url: "http://127.0.0.1:8000/api/v2/products/store",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        name: $('#name').val(),
+                        price: $('#price').val()
+                    }),
+                    success: function(data) {
+                        $('#result').html('Producto creado: ' + JSON.stringify(data));
+                    },
+                })
+            })
+        </script>
+    </body>
+</html>
